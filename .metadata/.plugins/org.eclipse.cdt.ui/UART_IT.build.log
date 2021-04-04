@@ -1,0 +1,20 @@
+23:46:07 **** Incremental Build of configuration Debug for project UART_IT ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F072xB -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UART_IT.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Video\UART\UART_IT\STM32F072C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_IT.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_IT.elf
+ 
+arm-none-eabi-objdump -h -S  UART_IT.elf  > "UART_IT.list"
+arm-none-eabi-objcopy  -O binary  UART_IT.elf  "UART_IT.bin"
+Finished building: UART_IT.bin
+ 
+arm-none-eabi-size   UART_IT.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10448	     68	   1716	  12232	   2fc8	UART_IT.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_IT.list
+ 
+
+23:46:11 Build Finished. 0 errors, 0 warnings. (took 4s.45ms)
+
